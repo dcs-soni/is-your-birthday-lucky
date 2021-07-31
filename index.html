@@ -12,11 +12,22 @@
       <p>We're not storing any data you provide in this website</p>
     </section>
 
-    <section class="upper-container">
 
-      <input type="date" min="1950-01-01" max="2021-12-31" placeholder="dd-mm-yyyy"></input>
+    <section class="container">
+      <h1 class="heading">Is your <span class="birthday-heading">Birthday</span> lucky ?</h1>
+      <h2 class="sub-heading">Enter your birthday and lucky number.</h2>
+      
+      <label class="birthday-label" for="date">Date</label>
+      <input class="birthday" type="date" name="begin" min="1950-01-01" max="2021-12-31" placeholder="dd-mm-yyyy"></input>
+      
+      <label class="lucky-number-label" for="lucky-number">Lucky Number</label>
+      <input class="lucky-number" type="number" placeholder="Number"></input>
+      
+      <button class="check-button" >Check</button>
 
-      <section class="lower-container"></section>
     </section>
+    
+
+    <script src="app.js"></script>
   </body>
 </html>
