@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    overflow: hidden; 
+    width: 100vw;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.alert {
+    position: absolute;
+    width: 100vw;
+    background-color: #F1FF38;
+    text-align: center;
+    height: 5%;
+    padding: 10px;
+    font-size: small;
+    font-weight: bold;
+}
+
+.upper-container {
+    height: 100vh;
+    width: 100vw;
+    background-color:#FEE4E5; /*#CCCCCC*/
+    /* position: relative; */
+}
+
+.lower-container {
+    position: absolute;
+    height: 155vh;
+    width: 130vw;
+    top: 410px;
+    left: -85px;
+    background-color: #211E6D; /*#F9FAFC*/
+    transform: rotate(6deg);
+}
+
+
+
+@media only screen and  (min-width: 700px) {
+    body {
+        overflow: hidden;
+    }
+}
