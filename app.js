@@ -33,14 +33,14 @@ function checkLucky(date, luckyNum) {
   if (date % luckyNum === 0) {
     console.log("You r lucky");
 
-    setInterval(function () {
+    setTimeout(function () {
       resultStatement.style.display = "block";
       resultStatement.innerText = "You're LUCKY!";
       luckyGif.style.display = "block";
       luckyGifMirror.style.display = "block";
     }, 5000);
   } else {
-    setInterval(function () {
+    setTimeout(function () {
       resultStatement.style.display = "block";
       resultStatement.innerText = "You're not so lucky :(";
       console.log("Not lucky");
