@@ -1,6 +1,9 @@
 const userBirthday = document.querySelector(".birthday");
 const userLuckyNumber = document.querySelector(".lucky-number");
+
+//Check nd Reset Buttons
 const checkButton = document.querySelector(".check-button");
+const resetButton = document.querySelector(".reset-button");
 
 //Gifs and Result
 const loadingGif = document.querySelector(".loading-gif");
@@ -14,18 +17,23 @@ const graphic = document.querySelectorAll(".graphic");
 //To display the luckyNumber and birthdate after clicking check
 const statement = document.querySelector(".statement");
 
+//Alert box 
+const alertBox = document.querySelector(".alert");
+const crossButton = document.querySelector(".cross-btn");
+
 console.log(graphic.length);
 
-//Sums the digits of the bday
-function getSumOfDate(date) {
-  let firstDigit = Math.floor(date / 10);
-  let secondDigit = date % 10;
-  console.log("first", firstDigit);
-  console.log("sec", secondDigit);
+let sumOfBday = 0;
 
-  let sumOfDate = firstDigit + secondDigit;
-  console.log(sumOfDate);
-  return sumOfDate;
+//Sums the digits of the bday
+function getSumOfBday(bday) {
+  
+  while(bday){
+    sumOfBday += bday % 10;
+    bday = Math.floor(bday / 10);
+  }
+  console.log(sumOfBday);
+  return sumOfBday;
 }
 
 //Checks the bdate is divisible by luckyNumber
@@ -35,14 +43,14 @@ function checkLucky(date, luckyNum) {
 
     setTimeout(function () {
       resultStatement.style.display = "block";
-      resultStatement.innerText = "You're LUCKY!";
+      resultStatement.innerText = "Yayy!! Your birthday is LUCKY!";
       luckyGif.style.display = "block";
       luckyGifMirror.style.display = "block";
     }, 5000);
   } else {
     setTimeout(function () {
       resultStatement.style.display = "block";
-      resultStatement.innerText = "You're not so lucky :(";
+      resultStatement.innerText = "Your birthday is not lucky :(";
       console.log("Not lucky");
     }, 5000);
   }
@@ -55,6 +63,7 @@ function showGifAndHideContent() {
 
     graphic[i].style.display = "none";
   }
+
   loadingGif.style.display = "block"; //Shows the loading gif
 
   setTimeout(function () {
@@ -63,19 +72,31 @@ function showGifAndHideContent() {
 }
 
 function getBirthdayandLuckyNumber() {
-  showGifAndHideContent();
-
+  
   birthday = userBirthday.value;
   luckyNumber = userLuckyNumber.value;
+  
+  if(!birthday || !luckyNumber){
+    console.log("please add some value");
+  }
 
-  let bdayArray = birthday.split("-");
-  //Accessing only the date from the array
-  let date = bdayArray[bdayArray.length - 1];
+  showGifAndHideContent();
 
-  sumOfDate = getSumOfDate(date);
-  checkLucky(sumOfDate, luckyNumber);
-  statement.innerText = `Your birthdate is ${date} and lucky number is ${luckyNumber}`;
+  
+
+  let bdayInput = parseInt(birthday.split("-").join(""));
+
+  let sum = getSumOfBday(bdayInput);
+  checkLucky(sum, luckyNumber);
+  statement.innerText = `Sum of birthdate is ${sum} and lucky number is ${luckyNumber}`;
   statement.style.display = "block";
 }
 
+crossButton.addEventListener("click", () => {
+  alertBox.style.display = "none";
+})
+resetButton.addEventListener("click", () => {
+  userBirthday.style.value = "none";
+  luckyNumber.style.value = "none";
+})
 checkButton.addEventListener("click", getBirthdayandLuckyNumber);
