@@ -12,7 +12,8 @@
     box-sizing: border-box;
 }
 
-html, body{
+html,
+body {
     margin: 0;
     width: 100vw;
     height: 100vh;
@@ -24,6 +25,7 @@ body {
     background: linear-gradient(5deg, var(--dark-blue) 45%, var(--pink) 35%);
 }
 
+/*****************Alert Statement************/
 .alert {
     position: absolute;
     width: 100vw;
@@ -31,11 +33,23 @@ body {
     text-align: center;
     height: 5%;
     padding: 10px;
-    font-size: small;
+    font-size: medium;
     font-weight: bold;
 }
 
+.alert p {
+    display: inline-block;
+}
 
+.alert button {
+    font-size: 10px;
+    cursor: pointer;
+}
+
+/************************************************/
+
+
+/************** Main Container******************/
 .container {
     display: flex;
     flex-direction: column;
@@ -43,8 +57,9 @@ body {
     margin-top: 55px;
 }
 
+/*******Heading*******/
 .heading {
-    font-size: 9vmin;
+    font-size: 4rem;
     font-family: 'PT Sans', sans-serif;
     color: var(--teal);
 }
@@ -60,50 +75,63 @@ body {
     font-family: 'Mandali', sans-serif;
 }
 
-.birthday-label, .lucky-number-label, .check-button {
-    margin-top: 25px;
-    margin-bottom: 10px;
-    font-size: 4vmin;
-}
+/*******************************/
 
-.birthday-label, .lucky-number-label {
-    color: var(--teal);
-    font-family: 'Mandali', sans-serif;
-}
-
-.birthday, .lucky-number {
-    width: 25vh;
-    height: 5vh;
-    text-align: center;
-}
-
-.check-button {
-    font-size: 3vmin;
-    border-radius: 5px;
-    width: 10vh;
-    font-weight: bold;
-    padding: 1px;
-    background-color: var(--pink);
-    /* color: var(--teal); */
-    font-family: 'Mandali', sans-serif;
-    cursor: pointer;
-}
-
-
-.graphic {
-    display: block;
-}
-
+/******Statement*****/
 .statement {
     font-size: 4vmin;
     font-family: 'Mandali', sans-serif;
     display: none;
 }
 
-.loading-gif{
+/***********/
+
+/****Inputs and Check Button******/
+.birthday-label,
+.lucky-number-label,
+.check-button {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 4vmin;
+    color: var(--teal);
+    font-family: 'Mandali', sans-serif;
+}
+
+.reset-button {
+    color: var(--teal);
+}
+
+.birthday,
+.lucky-number {
+    width: 25vh;
+    height: 5vh;
+    text-align: center;
+}
+
+.check-button,
+.reset-button {
+    font-size: 3vmin;
+    border-radius: 5px;
+    width: 12vh;
+    font-weight: bold;
+    padding: 1px;
+    background-color: var(--pink);
+    font-family: 'Mandali', sans-serif;
+    cursor: pointer;
+}
+
+.graphic {
+    display: block;
+}
+
+/*******************************************/
+
+
+/*********Results gif*************/
+.loading-gif {
     display: none;
     width: 15vw;
-    height: 10vw; 
+    height: 10vw;
     margin: 2rem;
 }
 
@@ -111,7 +139,8 @@ body {
     display: flex;
 }
 
-.lucky-gif, .lucky-gif-mirror {
+.lucky-gif,
+.lucky-gif-mirror {
     display: none;
     width: 20vw;
     height: 10vw;
@@ -121,11 +150,15 @@ body {
     z-index: 1;
 }
 
-.first, .second {
+.first,
+.second {
     width: 60vh;
     height: 60vh;
 }
 
+/*******************/
+
+/**Result Statement**/
 .result-statement {
     display: none;
     font-family: 'PT Sans', sans-serif;
@@ -138,12 +171,25 @@ body {
 
 }
 
+/**********************/
+
 @media only screen and (max-width: 900px) {
+
+    .heading {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .alert {
+        font-size: 10px;
+    }
 
     .container {
         margin-top: 75px;
     }
-    .first, .second {
+
+    .first,
+    .second {
         width: 45vh;
         height: 40vh;
         /* margin: 2rem; */
@@ -163,7 +209,7 @@ body {
     }
 
     .result-statement {
-        font-size: 7vh;
+        font-size: 4vh;
         top: 40vh;
     }
 }
