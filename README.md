@@ -20,7 +20,7 @@ Enter your birthdate and your lucky number and the app will check if your birthd
 
 <img src="img/desktop-ss.png" width="550" height="300" />&nbsp; &nbsp; &nbsp; &nbsp; <img src="img/mobile-ss.png" width="170" height="300" />
 
-## 👉 Check here [Live](https://https://dcs-lucky-birthday.netlify.app/)
+## 👉 Check here [Live](https://dcs-lucky-birthday.netlify.app/)
 
 
 ## 💻 **Built with**
