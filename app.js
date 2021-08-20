@@ -77,26 +77,33 @@ function getBirthdayandLuckyNumber() {
   luckyNumber = userLuckyNumber.value;
   
   if(!birthday || !luckyNumber){
-    console.log("please add some value");
-  }
+    resultStatement.style.display = "block";
+    resultStatement.style.top = "35%";
+    resultStatement.style.fontSize = "1rem";
 
-  showGifAndHideContent();
+    resultStatement.innerText = "Please enter some value";
+  } else {
+    showGifAndHideContent();
 
   
 
-  let bdayInput = parseInt(birthday.split("-").join(""));
+    let bdayInput = parseInt(birthday.split("-").join(""));
+  
+    let sum = getSumOfBday(bdayInput);
+    checkLucky(sum, luckyNumber);
+    statement.innerText = `Sum of birthdate is ${sum} and lucky number is ${luckyNumber}`;
+    statement.style.display = "block";
+  }
 
-  let sum = getSumOfBday(bdayInput);
-  checkLucky(sum, luckyNumber);
-  statement.innerText = `Sum of birthdate is ${sum} and lucky number is ${luckyNumber}`;
-  statement.style.display = "block";
+
 }
 
 crossButton.addEventListener("click", () => {
   alertBox.style.display = "none";
 })
 resetButton.addEventListener("click", () => {
-  userBirthday.style.value = "none";
-  luckyNumber.style.value = "none";
+  userBirthday.value = " ";
+  luckyNumber.value = " ";
 })
 checkButton.addEventListener("click", getBirthdayandLuckyNumber);
+
