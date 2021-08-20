@@ -103,7 +103,7 @@ crossButton.addEventListener("click", () => {
 })
 resetButton.addEventListener("click", () => {
   userBirthday.value = " ";
-  luckyNumber.value = " ";
+  userLuckyNumber.value = " ";
 })
 checkButton.addEventListener("click", getBirthdayandLuckyNumber);
 
