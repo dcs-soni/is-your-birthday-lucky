@@ -76,16 +76,13 @@ function getBirthdayandLuckyNumber() {
   birthday = userBirthday.value;
   luckyNumber = userLuckyNumber.value;
   
-  if(!birthday || !luckyNumber){
+  if(!birthday || !luckyNumber || luckyNumber <= 0){
     resultStatement.style.display = "block";
     resultStatement.style.top = "35%";
     resultStatement.style.fontSize = "1rem";
-
-    resultStatement.innerText = "Please enter some value";
+    resultStatement.innerText = "Please enter birthday and lucky number";
   } else {
     showGifAndHideContent();
-
-  
 
     let bdayInput = parseInt(birthday.split("-").join(""));
   
