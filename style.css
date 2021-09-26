@@ -57,6 +57,15 @@ body {
     margin-top: 55px;
 }
 
+a img {
+    position: absolute;
+    right: 2rem;
+    width: 2.5rem;
+    top: 2.5rem;
+    z-index: 1;
+
+}
+
 /*******Heading*******/
 .heading {
     font-size: 4rem;
